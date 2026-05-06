@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jacobo Studios</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+
+    *{
+      margin:
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+    }
+
+    body{
+      background:#07070a;
+      color:white;
+      overflow-x:hidden;
+    }
+
+    body::before{
+      content:"";
+      position:fixed;
+      width:600px;
+      height:600px;
+      background:radial-gradient(circle,#6d28d9 0%,transparent 70%);
+      top:-200px;
+      right:-200px;
+      opacity:.35;
+      z-index:-1;
+    }
+
+    body::after{
+      content:"";
+      position:fixed;
+      width:500px;
+      height:500px;
+      background:radial-gradient(circle,#2563eb 0%,transparent 70%);
+      bottom:-200px;
+      left:-200px;
+      opacity:.25;
+      z-index:-1;
+    }
+
+    nav{
+      width:100%;
+      padding:20px 8%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      position:fixed;
+      top:0;
+      backdrop-filter:blur(10px);
+      background:rgba(0,0,0,.25);
+      border-bottom:1px solid rgba(255,255,255,.08);
+      z-index:999;
+    }
+
+    nav h1{
+      font-size:28px;
+      font-weight:700;
+      background:linear-gradient(to right,#a855f7,#3b82f6);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+
+    nav ul{
+      display:flex;
+      gap:30px;
+      list-style:none;
+    }
+
+    nav ul li a{
+      color:white;
+      text-decoration:none;
+      font-size:15px;
+      transition:.3s;
+    }
+
+    nav ul li a:hover{
+      color:#a855f7;
+    }
+
+    .hero{
+      min-height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      padding:0 10%;
+    }
+
+    .hero-content{
+      max-width:900px;
+    }
+
+    .hero h2{
+      font-size:70px;
+      line-height:1.1;
+      margin-bottom:25px;
+    }
+
+    .gradient{
+      background:linear-gradient(to right,#a855f7,#3b82f6);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+
+    .hero p{
+      color:#b5b5b5;
+      font-size:18px;
+      margin-bottom:40px;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:15px 35px;
+      border-radius:14px;
+      background:linear-gradient(to right,#7c3aed,#2563eb);
+      color:white;
+      text-decoration:none;
+      font-weight:600;
+      transition:.3s;
+      box-shadow:0 0 25px rgba(124,58,237,.4);
+    }
+
+    .btn:hover{
+      transform:translateY(-3px) scale(1.03);
+    }
+
+    section{
+      padding:100px 8%;
+    }
+
+    .section-title{
+      font-size:45px;
+      margin-bottom:50px;
+      text-align:center;
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:30px;
+    }
+
+    .card{
+      background:rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.08);
+      backdrop-filter:blur(12px);
+      padding:30px;
+      border-radius:24px;
+      transition:.4s;
+    }
+
+    .card:hover{
+      transform:translateY(-10px);
+      border-color:#7c3aed;
+      box-shadow:0 0 25px rgba(124,58,237,.25);
+    }
+
+    .card h3{
+      margin-bottom:15px;
+      font-size:24px;
+    }
+
+    .card p{
+      color:#b5b5b5;
+      line-height:1.7;
+    }
+
+    .team{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:30px;
+    }
+
+    .member{
+      width:250px;
+      background:rgba(255,255,255,.05);
+      padding:25px;
+      border-radius:22px;
+      text-align:center;
+      border:1px solid rgba(255,255,255,.08);
+      transition:.3s;
+    }
+
+    .member:hover{
+      transform:translateY(-8px);
+    }
+
+    /* NUEVO estilo para imagen */
+    .avatar-img{
+      width:90px;
+      height:90px;
+      border-radius:50%;
+      object-fit:cover;
+      margin:auto;
+      margin-bottom:20px;
+      display:block;
+      border:2px solid rgba(255,255,255,.1);
+      box-shadow:0 0 15px rgba(124,58,237,.5);
+    }
+
+    .avatar{
+      width:90px;
+      height:90px;
+      border-radius:50%;
+      margin:auto;
+      margin-bottom:20px;
+      background:linear-gradient(to right,#7c3aed,#2563eb);
+    }
+
+    .discord-btn{
+      display:inline-block;
+      margin-top:15px;
+      padding:12px 25px;
+      border-radius:12px;
+      background:linear-gradient(to right,#5865F2,#3b82f6);
+      color:white;
+      text-decoration:none;
+      font-weight:600;
+      transition:.3s;
+    }
+
+    .discord-btn:hover{
+      transform:scale(1.05);
+    }
+
+    .event-box{
+      margin-top:35px;
+      background:rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.08);
+      padding:30px;
+      border-radius:22px;
+      display:inline-block;
+      backdrop-filter:blur(10px);
+    }
+
+    .event-box h3{
+      font-size:30px;
+      margin-bottom:10px;
+    }
+
+    .event-box p{
+      color:#b5b5b5;
+      font-size:18px;
+    }
+
+    footer{
+      padding:40px;
+      text-align:center;
+      color:#888;
+      border-top:1px solid rgba(255,255,255,.08);
+      margin-top:50px;
+    }
+
+    @media(max-width:768px){
+      .hero h2{
+        font-size:45px;
+      }
+
+      nav ul{
+        display:none;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <h1>Jacobo Studios</h1>
+
+    <ul>
+      <li><a href="#">Inicio</a></li>
+      <li><a href="#">Proyectos</a></li>
+      <li><a href="#">Launcher</a></li>
+      <li><a href="#">Equipo</a></li>
+      <li><a href="#">Discord</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h2>
+        Creamos experiencias
+        <span class="gradient">épicas</span>
+        en Minecraft
+      </h2>
+
+      <p>
+        Eventos cinematográficos, desafíos extremos
+        y aventuras únicas para la comunidad.
+      </p>
+
+      <a href="#" class="btn">Explorar</a>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">Nuestros Proyectos</h2>
+
+    <div class="cards">
+      <div class="card">
+        <h3>JacSafio 1</h3>
+        <p>Un evento extremo lleno de misterio, supervivencia y caos.</p>
+      </div>
+
+      <div class="card">
+        <h3>JacSafio 2</h3>
+        <p>La continuación de JacSafio 1, pero con muchos más desafíos que antes.</p>
+      </div>
+
+      <div class="card">
+        <h3>Discord</h3>
+        <p>Únete a nuestra comunidad oficial y participa en futuros eventos.</p>
+
+        <a href="https://discord.gg/K9ufSjvuCm" target="_blank" class="discord-btn">
+          Entrar al Discord
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section style="text-align:center;">
+    <h2 class="section-title">Próximamente</h2>
+
+    <div class="event-box">
+      <h3>JacSafio Minecraft Remastered #2</h3>
+      <p>09/05/2026</p>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">Nuestro Equipo</h2>
+
+    <div class="team">
+
+      <!-- ACTUALIZADO -->
+      <div class="member">
+        <img 
+          src="https://lens.usercontent.google.com/image?vsrid=CI2J9bD2hqHMBxACGAEiJDUzYTEyNWY4LTgxZWUtNDY0Zi1hMzg3LWVjMTI4MzRmOTk4ZTJ7IgJjZygJQnMKLmxmZS1kdW1teTo5ZGMxYjZlYi05NDdiLTRlY2UtODMzZS1hYTU2MzUxYzhiODgSQQo_L2Jucy9jZy9ib3JnL2NnL2Jucy9sZW5zLWZyb250ZW5kLWFwaS9wcm9kLmxlbnMtZnJvbnRlbmQtYXBpLzcyOKOo88G-pZQD&gsessionid=JmGGLPOn9fflqjlccTtSFNqxJeohSF6-4QD0feH3myIiGrAPEOUZoA"
+          alt="Jacobo"
+          class="avatar-img"
+        >
+        <h3>Jacobo</h3>
+        <p>Founder & Developer</p>
+      </div>
+
+      <div class="member">
+        <div class="avatar"></div>
+        <h3>Builder</h3>
+        <p>Map Designer</p>
+      </div>
+
+      <div class="member">
+        <div class="avatar"></div>
+        <h3>Artist</h3>
+        <p>UI & Graphics</p>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Jacobo Studios — Todos los derechos reservados.
+  </footer>
+
+</body>
+</html>
