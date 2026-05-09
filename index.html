@@ -195,25 +195,24 @@
     }
 
     .avatar-img{
-.avatar-img{
-  width:100px;
-  height:100px;
-  border-radius:50%;
-  object-fit:contain;
-  object-position:center;
-  background:rgba(255,255,255,.03);
-  padding:8px;
-  margin:auto;
-  margin-bottom:20px;
-  display:block;
-  border:2px solid rgba(255,255,255,.1);
-  box-shadow:0 0 20px rgba(124,58,237,.45);
-  transition:.3s ease;
-}
+      width:100px;
+      height:100px;
+      border-radius:50%;
+      object-fit:contain;
+      object-position:center;
+      background:rgba(255,255,255,.03);
+      padding:8px;
+      margin:auto;
+      margin-bottom:20px;
+      display:block;
+      border:2px solid rgba(255,255,255,.1);
+      box-shadow:0 0 20px rgba(124,58,237,.45);
+      transition:.3s ease;
+    }
 
-.member:hover .avatar-img{
-  transform:scale(1.08);
-}
+    .member:hover .avatar-img{
+      transform:scale(1.08);
+    }
 
     .discord-btn{
       display:inline-block;
@@ -250,6 +249,7 @@
     }
 
     @media(max-width:768px){
+
       .hero h2{
         font-size:45px;
       }
@@ -257,6 +257,7 @@
       nav ul{
         display:none;
       }
+
     }
 
   </style>
@@ -265,19 +266,23 @@
 <body>
 
   <nav>
+
     <h1>Jacobo Studios</h1>
 
     <ul>
       <li><a href="#">Inicio</a></li>
       <li><a href="#">Proyectos</a></li>
-      <li><a href="#">Descargas</a></li>
+      <li><a href="#" onclick="openDownloads()">Descargas</a></li>
       <li><a href="#">Equipo</a></li>
       <li><a href="#">Discord</a></li>
     </ul>
+
   </nav>
 
   <section class="hero">
+
     <div class="hero-content">
+
       <h2>
         Creamos experiencias
         <span class="gradient">épicas</span>
@@ -290,45 +295,76 @@
       </p>
 
       <a href="#" class="btn">Explorar</a>
+
     </div>
+
   </section>
 
   <section>
-    <h2 class="section-title">Nuestros Proyectos</h2>
+
+    <h2 class="section-title">
+      Nuestros Proyectos
+    </h2>
 
     <div class="cards">
+
       <div class="card">
         <h3>JacSafio 1</h3>
-        <p>Un evento extremo lleno de misterio, supervivencia y caos.</p>
+        <p>
+          Un evento extremo lleno de misterio,
+          supervivencia y caos.
+        </p>
       </div>
 
       <div class="card">
         <h3>JacSafio 2</h3>
-        <p>La continuación de JacSafio 1, pero con muchos más desafíos que antes.</p>
+        <p>
+          La continuación de JacSafio 1,
+          pero con muchos más desafíos que antes.
+        </p>
       </div>
 
       <div class="card">
-        <h3>Discord</h3>
-        <p>Únete a nuestra comunidad oficial y participa en futuros eventos.</p>
 
-        <a href="https://discord.gg/K9ufSjvuCm" target="_blank" class="discord-btn">
+        <h3>Discord</h3>
+
+        <p>
+          Únete a nuestra comunidad oficial
+          y participa en futuros eventos.
+        </p>
+
+        <a
+          href="https://discord.gg/K9ufSjvuCm"
+          target="_blank"
+          class="discord-btn"
+        >
           Entrar al Discord
         </a>
+
       </div>
+
     </div>
+
   </section>
 
   <section style="text-align:center;">
-    <h2 class="section-title">Próximamente</h2>
+
+    <h2 class="section-title">
+      Próximamente
+    </h2>
 
     <div class="event-box">
       <h3>JacSafio Minecraft Remastered #2</h3>
       <p>09/05/2026</p>
     </div>
+
   </section>
 
   <section>
-    <h2 class="section-title">Nuestro Equipo</h2>
+
+    <h2 class="section-title">
+      Nuestro Equipo
+    </h2>
 
     <div class="team">
 
@@ -351,11 +387,61 @@
       </div>
 
     </div>
+
+  </section>
+
+  <section id="downloads-page" style="display:none; text-align:center; min-height:100vh; padding-top:140px;">
+
+    <h2 class="section-title">
+      JacSafio Minecraft Remastered 2
+    </h2>
+
+    <div class="event-box">
+
+      <h3>Descargas:</h3>
+
+      <p style="margin-top:15px; color:#b5b5b5;">
+        Descarga el modpack oficial de
+        JacSafio Minecraft Remastered 2
+      </p>
+
+      <a
+        href="https://download1321.mediafire.com/469axisn4e8grQ3h7x__3fXCIczhU7y3FNUYIe9LV2NZboq5WG-lJU_Fn8kM8QSqlGDaGsrCVZx5mb2SimeuPAoOnU79Cj6Xmeh9zepHqM_hjqzLFqU5RvotOxBXSHIUMRe2-YjQJXh9ShTBWZuvDQwrYavYBUyIpcVqVWmoqoE/eql4xqm1glwuhbv/JacSafio+Minecraft+Remastered+%232+6.0.7.mrpack"
+        class="btn"
+        download
+        target="_blank"
+        style="margin-top:20px; display:inline-block;"
+      >
+        Descargar
+      </a>
+
+    </div>
+
   </section>
 
   <footer>
     © 2026 Jacobo Studios — Todos los derechos reservados.
   </footer>
+
+  <script>
+
+    function openDownloads() {
+
+      document.querySelector('.hero').style.display = 'none';
+      document.querySelectorAll('section')[1].style.display = 'none';
+      document.querySelectorAll('section')[2].style.display = 'none';
+      document.querySelectorAll('section')[3].style.display = 'none';
+
+      document.getElementById('downloads-page').style.display = 'block';
+
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+
+    }
+
+  </script>
 
 </body>
 </html>
